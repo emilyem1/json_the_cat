@@ -5,8 +5,9 @@ request.get('https://api.thecatapi.com/v1/breeds/search?q=sib', (error, response
   if (error) { 
     console.error('Error:', error);
 } else {
-    console.log('Body:', body); // object containing details of sib cat
-    console.log(typeof body) // it's a string
+    const data = JSON.parse(body); // turn json string into object
+    console.log(data); // now an object
+    console.log(typeof data); // confirms object 
 }
 });
 
